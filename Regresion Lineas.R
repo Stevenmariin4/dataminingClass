@@ -1,0 +1,20 @@
+datos_food<-read.csv("~/Downloads/Nutritional_food.csv",sep = ",")
+food_m<-datos_food[1:50,c(4,5)]
+View(food_m)
+plot(food_m)
+regresion_linea<-lm(data=datos_food,formula = calories ~ servingsize)
+names(regresion_linea)
+summary(regresion_linea)
+confint(regresion_linea,level = 0.95)
+
+
+data("AirPassengers")
+series.ts<-ts(AirPassengers)
+str(series.ts)
+decompose(AirPassengers)
+plot(decompose(AirPassengers))
+plot(series.ts,main="Pasajeros de 1960 a 1971", xlab="años",ylab="Numero de pasajeros")
+modelo<-auto.arima(series.ts)
+summary(modelo)
+pronostico<-forecast(modelo,12,level=95)
+plot(pronostico,main="pronostico",xlab="años",ylab="Numero de pasajeros")

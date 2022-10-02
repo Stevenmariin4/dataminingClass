@@ -1,0 +1,9 @@
+install.packages("e1071")
+library(e1071)
+data(iris)
+clasificador<-naiveBayes(Species~.,data=iris)
+clasificador
+prediccion<-table(predict(clasificador,iris),iris[,5])
+prediccion
+clasificador$apriori
+plot(prediccion,col=hcl(c(120,10,44)))

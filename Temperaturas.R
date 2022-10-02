@@ -1,0 +1,17 @@
+temperature_record_seven_may <-c(30,25.4,18.7,34,49,14.1)
+temperature_record_eigth_may <-c(28.9,34.2,32.3,18.16,25.9)
+temperature_record_nine_may <-c(38.7,31.2,22.6,18.6,16.9,25.9)
+
+t<- c(temperature_record_seven_may,temperature_record_eigth_may,temperature_record_nine_may)
+
+cat("los valores de la tempratura de los tres dias son",t)
+cat("el elemento minimo del vector es :")
+min(t)
+cat("el elemento maximo del vector es")
+max(t)
+cat("la media de las tempaturas es:")
+mean(t)
+cat("la mediana de las temperaturas es")
+median(t)
+cat("el vector ordenado de menor a mayor es")
+sort(t)
